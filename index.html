@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="هدية عيد ميلاد لأحلى رحاب في الدنيا. كل سنة وأنتي طيبة يا قلبي.">
+    <meta name="robots" content="noindex, nofollow"> <!-- Prevents search engines from indexing the site -->
+    <title>كل سنة وأنتي طيبة يا رحاب 🎂✨</title>
+
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons (Professional & Elegant) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Password Gate Overlay -->
+    <div id="password-gate" class="password-screen">
+        <div class="password-box">
+            <i class="ph-duotone ph-lock-key password-icon"></i>
+            <h2>سر يمعلم 🤫</h2>
+            <p>الباسورد ياما تفارق من سكات بدل م **</p>
+            <div class="input-wrapper">
+                <input type="password" id="password-input" placeholder="كلمة السر هنا...">
+                <button id="unlock-btn"><i class="ph-duotone ph-arrow-left"></i></button>
+            </div>
+            <p id="password-error" class="error-msg hidden">كلمة السر غلط يا قمر، حاولي تاني! ❤️</p>
+        </div>
+    </div>
+
+    <!-- Background Canvas for Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Floating Audio Control -->
+    <div id="audio-control" class="audio-control tooltip">
+        <i id="audio-icon" class="ph-duotone ph-music-notes"></i>
+        <span class="tooltiptext">شغّل / وقّف المزيكا</span>
+    </div>
+
+    <!-- AUDIO: مكان في قلبك - مروان موسى ودنيا وائل -->
+    <!-- يرجى وضع ملف الأغنية باسم Makan-Fi-Albak.mp3 في مجلد assets -->
+    <audio id="bg-music" src="assets/images/Makan-Fi-Albak.mp3" loop preload="auto"></audio>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-content fade-in-up">
+            <h1 class="hero-title">كل سنة وأنتي طيبة <br><span class="highlight-name">يا رحاب</span> <i
+                    class="ph-duotone ph-cake" style="color: var(--gold); vertical-align: middle;"></i></h1>
+            <p class="hero-subtitle">للبنت اللي منورة الدنيا كلها بضحكتها...</p>
+            <button class="scroll-down-btn" onclick="scrollToSection('welcome')">
+                <i class="ph-duotone ph-caret-down"></i>
+            </button>
+        </div>
+        <div class="stars-overlay"></div>
+    </header>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="section reveal">
+        <div class="container countdown-container">
+            <h2 class="section-title">العد التنازلي لليوم المنتظر <i class="ph-duotone ph-calendar-star"
+                    style="color: var(--dark-pink); vertical-align: middle;"></i></h2>
+            <div class="countdown-wrapper">
+                <p class="emotional-text" style="margin-bottom: 2rem;">كل ثانية بتقربنا أكتر من اليوم اللي الدنيا فيه
+                    نورت بيكي...</p>
+                <div id="birthday-countdown" class="counter-grid">
+                    <div class="time-box countdown-box"
+                        style="background: linear-gradient(145deg, #ffffff, #fff0f5); border: 2px solid var(--dark-pink);">
+                        <span id="cd-days" class="time-val" style="color: var(--dark-pink);">00</span>
+                        <span class="time-label">يوم</span>
+                    </div>
+                    <div class="time-box countdown-box">
+                        <span id="cd-hours" class="time-val">00</span>
+                        <span class="time-label">ساعة</span>
+                    </div>
+                    <div class="time-box countdown-box">
+                        <span id="cd-minutes" class="time-val">00</span>
+                        <span class="time-label">دقيقة</span>
+                    </div>
+                    <div class="time-box countdown-box">
+                        <span id="cd-seconds" class="time-val">00</span>
+                        <span class="time-label">ثانية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="section glass-section reveal">
+        <div class="container">
+            <h2 class="section-title">رسالة للقمر ده <i class="ph-duotone ph-heart"
+                    style="color: var(--dark-pink); vertical-align: middle;"></i></h2>
+            <p class="emotional-text">
+                انهردا عيد ميلاد اجمل بنت ف الدنيا دي وصدقيني كل حاجة ف الموقع ده بسيطة عليكي انتي اجمل من كده بكتير
+            </p>
+
+            <div class="age-counter-wrapper">
+                <h3>كل سنة عشتيها وأنتي بتزيدي حلاوة :</h3>
+                <div id="age-counter" class="counter-grid">
+                    <div class="time-box">
+                        <span id="years" class="time-val">0</span>
+                        <span class="time-label">سنة</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="days" class="time-val">0</span>
+                        <span class="time-label">يوم</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours" class="time-val">0</span>
+                        <span class="time-label">ساعة</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes" class="time-val">0</span>
+                        <span class="time-label">دقيقة</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds" class="time-val">0</span>
+                        <span class="time-label">ثانية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messages Section -->
+    <section id="messages" class="section pt-0 reveal">
+        <div class="container">
+            <h2 class="section-title">كلام طالع من القلب للقمر ده <i class="ph-duotone ph-stars"
+                    style="color: var(--gold); vertical-align: middle;"></i></h2>
+            <div class="cards-grid">
+                <div class="card hover-glow">
+                    <i class="ph-duotone ph-heart card-icon"></i>
+                    <p>"كل سنة وأنتي بتحلوي أكتر وأكتر كده وتعبانا بحلاوتك"</p>
+                </div>
+                <div class="card hover-glow">
+                    <i class="ph-duotone ph-sparkle card-icon"></i>
+                    <p>"مجرد ما الضحكة الحلوة دي بتطلع بتخلي الدنيا تنور"</p>
+                </div>
+                <div class="card hover-glow">
+                    <i class="ph-duotone ph-gift card-icon"></i>
+                    <p>"كل سنة والقمر ده يكبر ويحلو أكتر وأكتر"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Creative Features -->
+    <section id="creative" class="section glass-section reveal">
+        <div class="container creative-container">
+            <div class="msg-of-the-day shadow-box">
+                <h3 class="creative-title"><i class="ph-duotone ph-music-notes"></i> أغنية للقمر ده</h3>
+                <!-- Audio Visualizer -->
+                <div id="visualizer-container" class="visualizer-container">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <p id="dynamic-message" class="dynamic-message">بحمل الرسالة...</p>
+                <button onclick="changeMessage()" class="btn-refresh"><i class="ph-duotone ph-arrows-clockwise"></i>
+                    رسالة تانية</button>
+            </div>
+
+            <div class="wish-animation-box shadow-box">
+                <h3 class="creative-title">أمنية ليكي <i class="ph-duotone ph-shooting-star"
+                        style="color: var(--gold); vertical-align: text-bottom;"></i></h3>
+                <p>غمضي عينيكي، اتمني أمنية بس متدعيش عليا 😂!</p>
+                <button id="wish-btn" class="btn-primary pulse-btn">اتمنى أمنية</button>
+                <div id="wish-result" class="wish-result hidden">
+                    <p>أمنيتك خلاص في طريقها عشان تتحقق! <i class="ph-duotone ph-paper-plane-tilt"
+                            style="color: var(--dark-pink); margin-right: 5px;"></i><i class="ph-duotone ph-sparkles"
+                            style="color: var(--gold);"></i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">صور للقمر ده على مدار السنين الي فاتت وهو كل شوية يزيد حلاوة <i
+                    class="ph-duotone ph-camera" style="color: var(--dark-pink); vertical-align: middle;"></i></h2>
+            <div class="gallery-grid">
+                <!-- Using the 10 images you provided -->
+                <div class="gallery-item"><img src="assets/images/images (1).jfif" alt="ذكرى 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/images (2).jfif" alt="ذكرى 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/images (3).jfif" alt="ذكرى 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/images (4).jfif" alt="ذكرى 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/images (5).jfif" alt="ذكرى 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/images (6).jfif" alt="ذكرى 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/images (7).jfif" alt="ذكرى 7" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/images (8).jfif" alt="ذكرى 8" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/images (9).jfif" alt="ذكرى 9" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/images.jfif" alt="ذكرى 10" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surprise Section -->
+    <section id="surprise" class="section center-content reveal">
+        <div class="container">
+            <h2 class="section-title">مفاجأة بسيطة <i class="ph-duotone ph-gift"
+                    style="color: var(--dark-pink); vertical-align: middle;"></i></h2>
+            <button id="surprise-btn" class="btn-magic">دوسي هنا عشان المفاجأة</button>
+        </div>
+    </section>
+
+    <!-- Surprise Modal Flow -->
+    <div id="surprise-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-anim-container">
+                <i class="ph-duotone ph-heart modal-icon love-icon-pulse"></i>
+                <h2 class="modal-title">رحاب...</h2>
+                <div class="pro-love-wrapper">
+                    <h1 id="love-trigger" class="pro-love-text">بحبك</h1>
+                    <div class="sparkle-spark"></div>
+                </div>
+                <p class="modal-subtitle">By Youstos</p>
+                <div class="confetti-launcher"></div>
+                <div class="modal-footer-credit">By Youstos</div>
+            </div>
+        </div>
+        <!-- Hidden Audio for Party Horn -->
+        <audio id="party-horn-sound" src="https://www.myinstants.com/media/sounds/party-horn.mp3"
+            preload="auto"></audio>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-msg">كل سنة وأنتي منورة دنيتنا... وربنا ما يحرمنا من ضحكتك دي أبداً <i
+                    class="ph-duotone ph-heart" style="color: var(--dark-pink); vertical-align: middle;"></i></p>
+            <p class="made-with-love">اتعملت بكل حب عشانك <i class="ph-duotone ph-sparkles"
+                    style="color: var(--gold); vertical-align: middle;"></i></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
